@@ -1,9 +1,6 @@
 name: Sync from Private Repo
 
 on:
-  workflow_dispatch: # Allows manual triggering
-  schedule:
-    - cron: '0 * * * *' # Adjust the schedule as needed
   push:
     branches:
       - main
