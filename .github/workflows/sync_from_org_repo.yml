@@ -18,6 +18,11 @@ jobs:
       with:
         token: ${{ secrets.GH_PAT }}
 
+    - name: Set up Git config
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+
     - name: Sync from Organization Repo
       run: |
         git remote add source https://${{ secrets.GH_PAT }}@github.com/Black-Tek/BlackTekGuide.git
