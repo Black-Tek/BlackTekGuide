@@ -14,7 +14,7 @@ layout:
 
 # Welcome to the Black Tek Documentation
 
-This is the official documentation hub for **Black Tek** – your go-to resource for everything related to the development, features, and usage of Black Tek. Whether you're a developer, contributor, or just curious about the project, you'll find all the information you need here.
+This iss the official documentation hub for **Black Tek** – your go-to resource for everything related to the development, features, and usage of Black Tek. Whether you're a developer, contributor, or just curious about the project, you'll find all the information you need here.
 
 ### What You’ll Find Here
 
