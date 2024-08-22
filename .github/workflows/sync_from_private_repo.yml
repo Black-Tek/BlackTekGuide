@@ -1,0 +1,28 @@
+name: Sync from Private Repo
+
+on:
+  workflow_dispatch: # Allows manual triggering
+  schedule:
+    - cron: '0 * * * *' # Adjust the schedule as needed
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Target Repo
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GH_PAT }}
+
+    - name: Sync from Private Repo
+      run: |
+        git remote add source https://<PAT>@github.com/ZacksBot/GitBookBlackTekDocs.git
+        git fetch source main
+        git merge source/main --allow-unrelated-histories -m "Merging changes from private repo"
+        git push origin main
+      env:
+        PAT: ${{ secrets.GH_PAT }}
