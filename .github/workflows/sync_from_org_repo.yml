@@ -20,9 +20,7 @@ jobs:
 
     - name: Sync from Organization Repo
       run: |
-        git remote add source https://<PAT>@github.com/Black-Tek/BlackTekGuide.git
+        git remote add source https://${{ secrets.GH_PAT }}@github.com/Black-Tek/BlackTekGuide.git
         git fetch source main
         git merge source/main --allow-unrelated-histories -m "Merging changes from organization repo"
         git push origin main
-      env:
-        PAT: ${{ secrets.GH_PAT }}
