@@ -1,4 +1,4 @@
-name: Push to Private Repo
+name: Force Push to Private Repo
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
 
-      - name: Push Changes to Private Repo
+      - name: Force Push to Private Repo
         run: |
           git remote add private https://${{ secrets.GH_PAT }}@github.com/ZacksBot/GitBookBlackTekDocs.git
-          git push private main
+          git push --force private main
