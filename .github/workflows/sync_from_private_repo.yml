@@ -20,9 +20,7 @@ jobs:
 
     - name: Sync from Private Repo
       run: |
-        git remote add source https://<PAT>@github.com/ZacksBot/GitBookBlackTekDocs.git
+        git remote add source https://${{ secrets.GH_PAT }}@github.com/ZacksBot/GitBookBlackTekDocs.git
         git fetch source main
         git merge source/main --allow-unrelated-histories -m "Merging changes from private repo"
         git push origin main
-      env:
-        PAT: ${{ secrets.GH_PAT }}
